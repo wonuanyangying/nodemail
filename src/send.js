@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const fs = require('fs');
 module.exports = async function (html) {
     let transporter = nodemailer.createTransport({
         service: 'qq',
@@ -6,7 +7,7 @@ module.exports = async function (html) {
         secureConnection: true,
         auth: {
             user: '1101544275@qq.com',
-            pass: 'qmftboquenymhghj'
+            pass: 'iqkipqvkyzepigjc'
         }
     });
     let mailOptionsWang = {
@@ -22,6 +23,12 @@ module.exports = async function (html) {
         html
     };
     let msgW = await transporter.sendMail(mailOptionsWang);
+        msgW = JSON.stringify(msgW, null, '\t');
     let msgY = await transporter.sendMail(mailOptionsYang);
-    console.log(msgW.messageId, msgY.messageId);
+        msgY = JSON.stringify(msgY, null, '\t');
+    let date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
+    fs.writeFileSync('./log.txt', `\n 当前日期: ${date} --> ${msgW} ${msgY}`, {
+        encoding: 'utf8',
+        flag: 'a'
+    });
 };

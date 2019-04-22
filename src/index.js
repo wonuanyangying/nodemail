@@ -10,7 +10,7 @@ const template = ejs.compile(
     fs.readFileSync(path.resolve(__dirname, "email.ejs"), 'utf8')
 );
 
-schedule.scheduleJob('0 0 16 * * *', () => {
+schedule.scheduleJob('0 0 15 * * *', () => {
     let htmlData = {};
     Promise.all([getWeather(), getOne()]).then((data) => {
         let today = new Date(),
