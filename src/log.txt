@@ -1,0 +1,34 @@
+
+ 当前日期: 2019-9-30 --> {
+	"accepted": [
+		"wangtianli02@meituan.com"
+	],
+	"rejected": [],
+	"envelopeTime": 263,
+	"messageTime": 958,
+	"messageSize": 5183,
+	"response": "250 Ok: queued as ",
+	"envelope": {
+		"from": "1101544275@qq.com",
+		"to": [
+			"wangtianli02@meituan.com"
+		]
+	},
+	"messageId": "<a3468212-27f1-6b00-1fe1-823973a40e3a@qq.com>"
+} {
+	"accepted": [
+		"yangying861@outlook.com"
+	],
+	"rejected": [],
+	"envelopeTime": 330,
+	"messageTime": 778,
+	"messageSize": 5205,
+	"response": "250 Ok: queued as ",
+	"envelope": {
+		"from": "1101544275@qq.com",
+		"to": [
+			"yangying861@outlook.com"
+		]
+	},
+	"messageId": "<3c752c10-72f8-c8ef-3b3c-176a3b47e9c0@qq.com>"
+}

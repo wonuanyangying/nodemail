@@ -19,7 +19,7 @@ module.exports = async function (html) {
     let mailOptionsYang = {
         from: '"居居哥" <1101544275@qq.com>',
         to: "yangying861@outlook.com",
-        subject: "居居哥发来的小邮件",
+        subject: "居居哥发来的新版小邮件",
         html
     };
     let msgW = await transporter.sendMail(mailOptionsWang);

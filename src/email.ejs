@@ -11,28 +11,55 @@
         <span style="font-size:24px;color:rgb(221, 73, 73)"> <%= lastDay %> </span>
         <span>天</span>
     </div>
-    <div style="width:100%; margin: auto 0;color:#5f5e5e;text-align:center">
-        <div style="margin-top:15px;color:#676767;font-size:15px">近期天气预报</div>
-        <div style="margin-top:5px;color:#ccc;font-size:12px">适当加减衣服哦</div>
-    <% for(var j=0; j<3; j++) { %>
-        <div style="display: flex;margin-top:15px;justify-content: space-around;align-items: center;">
-            <span style="width:15%; text-align:center;color: <%= j===0 ? 'rgb(221, 73, 73)' : '#5f5e5e' %>"><%= weather[j].date %></span>
-            <div style="flex:1; text-align:center;">
-                <p style="margin: 0;"><%= weather[j].daytime %></p>
-                <p style="margin: 0;"><%= weather[j].night %></p>
+    <div style="width:100%; margin: 0 auto;color:#5f5e5e;text-align:center">
+        <span style="display:block;color:red;font-size:25px"><%= weatherTip %></span>
+        <span style="display:block;margin-top:15px;color:#676767;font-size:15px;margin-bottom: 30px;">近期天气预报</span>
+    <% for(var j = 0; j<threeDaysData.length; j++) { %>
+        <div style="display: flex;margin-top:5px;height: 30px;line-height: 30px;justify-content: space-around;align-items: center;">
+            <span style="width:15%; text-align:center;"><%= threeDaysData[j].Day %></span>
+            <div style="width:25%; text-align:center;">
+                <img style="height:24px;vertical-align:middle;" src='<%= threeDaysData[j].WeatherImgUrl %>' alt="">
+                <span style="display:inline-block"><%= threeDaysData[j].WeatherText %></span>
             </div>
-            <span style="width:15%; text-align:center;"><%= weather[j].temperature %></span>
-            <span style="width:30%; text-align:center;"><%= weather[j].wind %></span>
+            <span style="width:25%; text-align:center;"><%= threeDaysData[j].Temperature %></span>
+            <% if (threeDaysData[j].PollutionLevel=='level_1') { %>
+                <div style="width:35%; ">
+                    <span style="display:inline-block;padding:0 8px;line-height:25px;color:#8fc31f; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
+                </div>
+            <% }  %>
+            <% if (threeDaysData[j].PollutionLevel=='level_2') { %>
+                <div style="width:35%; ">
+                    <span style="display:inline-block;padding:0 8px;line-height:25px;color:#d7af0e; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
+                </div>
+            <% }  %>
+            <% if (threeDaysData[j].PollutionLevel=='level_3') { %>
+                <div style="width:35%; ">
+                    <span style="display:inline-block;padding:0 8px;line-height:25px;color:#f39800; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
+                </div>
+            <% }  %>
+            <% if (threeDaysData[j].PollutionLevel=='level_4') { %>
+                <div style="width:35%; ">
+                    <span style="display:inline-block;padding:0 8px;line-height:25px;color:#e2361a; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
+                </div>
+            <% }  %>
+            <% if (threeDaysData[j].PollutionLevel=='level_5') { %>
+                <div style="width:35%; ">
+                    <span style="display:inline-block;padding:0 8px;line-height:25px;color:#5f52a0; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
+                </div>
+            <% }  %>
+            <% if (threeDaysData[j].PollutionLevel=='level_6') { %>
+                <div style="width:35%; ">
+                    <span style="display:inline-block;padding:0 8px;line-height:25px;color:#631541; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
+                </div>
+            <% }  %>
         </div>
     <% } %>
     </div>
     <div style="text-align:center;margin:35px 0;">
-        <span style="display:block;margin-top:55px;color:#676767;font-size:15px">🐷</span>
-        <span style="display:block;margin-top:25px;font-size:18px; color:#9d9d9d;"><%= todaystr %></span>
+        <span style="display:block;margin-top:25px;font-size:22px; color:#9d9d9d; "><%= todaystr %></span>
         <img src="<%= todayOneData.imgUrl %>" style="width:100%;margin-top:10px;"  alt="">
         <span style="color:#b0b0b0;font-size:13px;"><%= todayOneData.type %></span>
         <div style="margin:10px auto;width:85%;color:#5f5e5e;" ><%= todayOneData.text %></div>
     </div>
-    <p style="color: #ccc; text-align: center;">爱你的居居哥 🐷</p>
 </body>
 </html>
